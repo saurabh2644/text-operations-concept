@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .box {
+            width: 60%;
+            display: block;
+            margin: 20px auto;
+            min-height: 100px;
+            padding: 10px;
+            border-radius: 10px;
+            background-color: rgb(147, 248, 146);
+            color: balck;
+            font-weight: bold;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+
+        .buttons {
+
+            width: 70%;
+            margin: 50px auto;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .text-center {
+            display: block;
+            margin: 10px auto;
+            color: white;
+            background-color: rgb(21, 220, 74);
+            width: 230px;
+            padding: 10px;
+
+        }
+
+        .btn-action {
+            color: white;
+            background-color: rgb(21, 220, 74);
+            padding: 8px;
+            width: 150px;
+            border: none;
+            border-radius: 15px;
+        }
+
+        @media screen and (max-width:600px) {
+            .buttons {
+
+             flex-direction: column;
+             align-items: center;
+             flex-wrap: wrap;
+             
+            }
+
+            .btn-action {
+            margin-bottom: 20px;
+        }
+
+    }
+    </style>
+</head>
+
+<body>
+
+    <h1 class="text-center">Text Operations</h1>
+
+    <input type="text" id="input" class="box" placeholder="ENTER TEXT">
+
+    <input type="text" id="output" class="box" placeholder="OUTPUT IS.....">
+
+    <div class="buttons">
+        <button type="button" class="btn-action" onclick="upper()">Upper case</button>
+        <button type="button" class="btn-action" onclick="lower()">lower case</button>
+        <button type="button" class="btn-action" onclick="wordcount()">Word Count</button>
+        <button type="button" class="btn-action" onclick="charcount()">Character count</button>
+    </div>
+
+
+
+    <script>
+
+        const inputElement = document.getElementById('input')
+        const outputElement = document.getElementById('output')
+
+        function upper() {
+
+            outputElement.value = inputElement.value.toUpperCase();
+        }
+
+        function lower() {
+
+            outputElement.value = inputElement.value.toLowerCase();
+        }
+
+        function wordcount() {
+
+            outputElement.value = `Word Count : ${inputElement.value.split(" ").length}`;
+        }
+
+        function charcount() {
+
+            outputElement.value = `Character Count : ${inputElement.value.length}`;
+        }
+
+    
+    </script>
+</body>
+
+</html>
